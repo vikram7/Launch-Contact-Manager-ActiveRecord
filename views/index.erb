@@ -1,0 +1,19 @@
+<h1>Contacts</h1>
+
+<form action = "search" method = "post">
+  Search term: <input type="text" name="search_string"><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+<ul>
+  <% @contacts.each do |contact| %>
+    <li><a href="<%= "contacts/#{contact.id}"%>"><%= contact.name %></a> - <%= contact.phone_number %></li>
+  <% end %>
+</ul>
+
+
+
+<br><br>
+Click <a href = '/add_contact'>here</a> to add a new contact to the database.<br>
+Click <a href = '/'>here</a> to go home.
